@@ -1,0 +1,12 @@
+---
+- name: Test filter plugin
+  hosts: all
+  user: jparrill
+  tasks:
+  - name: get private ip
+    get_interface:
+      topic: 'management'
+      regex: '192.168'
+
+  - name: debug
+    debug: msg="management interface {{ gi_management_interface }}"
