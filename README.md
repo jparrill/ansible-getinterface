@@ -13,6 +13,13 @@ This module have 2 variables:
 **Regex**, will be the addressing that must fit with an ipaddress of an existant interface.
 
 ## Execution
+- Playbook:
+```
+- name: get private ip
+  get_interface:
+    topic: 'management'
+    regex: '192.168'
+```
 
 - Input:
 ```
@@ -26,7 +33,7 @@ PLAY [Test filter plugin] ******************************************************
 TASK [setup] *******************************************************************
 ok: [localhost]
 
-TASK [get private ip] **********************************************************
+TASK [Set Management interface based on a regex] *******************************
 changed: [localhost]
 
 TASK [debug] *******************************************************************

@@ -3,7 +3,8 @@
   hosts: all
   user: jparrill
   tasks:
-  - name: get private ip
+  ## This task will create this fact: gi_management_interface
+  - name: 'Set Management interface based on a regex'
     get_interface:
       topic: 'management'
       regex: '192.168'
